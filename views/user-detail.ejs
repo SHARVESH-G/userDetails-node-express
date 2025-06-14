@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <%- include('navbar') %>
   <% if (locals.us) { %>
     <div class="profile-card">
       <div class="profile-header">
@@ -42,6 +43,13 @@
           <li><strong>Email:</strong> <%= us.email %></li>
           <li><strong>Phone:</strong> <%= us.phone %></li>
           <li><strong>MAC Address:</strong> <%= us.macAddress %></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2>🤖 Login Credentials</h2>
+        <ul>
+          <li><strong>Username:</strong> <%= us.username %></li>
+          <li><strong>Password:</strong> <%= us.password %></li>
         </ul>
       </div>
 

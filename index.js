@@ -26,6 +26,10 @@ app.get('/user-detail',(req,res)=>{
     res.render('user-detail.ejs', {us:userSpeciData});
 })
 
+app.get('/user',(req,res)=>{
+    res.render('user.ejs',{users:Users});
+});
+
 app.get('/search' , (req,res)=>{
     res.render('search.ejs');
 })

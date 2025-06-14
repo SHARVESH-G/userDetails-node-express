@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/user.css">
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="main-container">
+        <h2>Users</h2>
+        <div class="card-container">
+            <% users.forEach((user) => { %>
+                <div class="card">
+                    <div class="user-name"><%= user.firstName %> <%= user.lastName %></div>
+                    
+                    <div class="info-row">
+                        <div><strong>ID:</strong> <%= user.id %></div>
+                        <div><strong>Age:</strong> <%= user.age %></div>
+                    </div>
+    
+                    <div class="info-row">
+                        <div><strong>Username:</strong> <%= user.username %></div>
+                        <div><strong>Role:</strong> <%= user.role %></div>
+                    </div>
+    
+                    <div class="info-row">
+                        <div><strong>Phone:</strong> <%= user.phone %></div>
+                    </div>
+    
+                    <div class="info-row">
+                        <div><strong>Email:</strong> <%= user.email %></div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
