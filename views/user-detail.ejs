@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury User Profile</title>
+  <link rel="stylesheet" href="ustyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <% if (locals.us) { %>
+    <div class="profile-card">
+      <div class="profile-header">
+        <img src="https://dummyjson.com/icon/michaelw/128" alt="Avatar" class="avatar" />
+        <div>
+          <h1><%= us.firstName %> <%= us.lastName %></h1>
+          <p class="role"><%= us.role %> • @<%= us.username %></p>
+        </div>
+      </div>
+
+      <form action="/" method="get" class="back-form">
+        <button type="submit" class="btn-back">← Back to Home</button>
+      </form>
+
+      <div class="section">
+        <h2>📌 Personal Info</h2>
+        <ul>
+          <li><strong>Age:</strong> <%= us.age %></li>
+          <li><strong>Gender:</strong> <%= us.gender %></li>
+          <li><strong>Birth Date:</strong> <%= us.birthDate %></li>
+          <li><strong>Blood Group:</strong> <%= us.bloodGroup %></li>
+          <li><strong>Height:</strong> <%= us.height %> cm</li>
+          <li><strong>Weight:</strong> <%= us.weight %> kg</li>
+          <li><strong>Eye Color:</strong> <%= us.eyeColor %></li>
+          <li><strong>University:</strong> <%= us.university %></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📞 Contact</h2>
+        <ul>
+          <li><strong>Email:</strong> <%= us.email %></li>
+          <li><strong>Phone:</strong> <%= us.phone %></li>
+          <li><strong>MAC Address:</strong> <%= us.macAddress %></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🏠 Home Address</h2>
+        <ul>
+          <li><%= us.address.address %></li>
+          <li><%= us.address.city %>, <%= us.address.state %> (<%= us.address.stateCode %>), <%= us.address.postalCode %></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>💳 Bank Details</h2>
+        <ul>
+          <li><strong>Card Type:</strong> <%= us.bank.cardType %></li>
+          <li><strong>Card Number:</strong> <%= us.bank.cardNumber %></li>
+          <li><strong>Expires:</strong> <%= us.bank.cardExpire %></li>
+          <li><strong>Currency:</strong> <%= us.bank.currency %></li>
+          <li><strong>IBAN:</strong> <%= us.bank.iban %></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🏢 Company</h2>
+        <ul>
+          <li><strong>Name:</strong> <%= us.company.name %></li>
+          <li><strong>Department:</strong> <%= us.company.department %></li>
+          <li><strong>Title:</strong> <%= us.company.title %></li>
+          <li><strong>Location:</strong> <%= us.company.address.address %>, <%= us.company.address.city %>, <%= us.company.address.state %> (<%= us.company.address.stateCode %>), <%= us.company.address.postalCode %></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🪙 Crypto</h2>
+        <ul>
+          <li><strong>Coin:</strong> <%= us.crypto.coin %></li>
+          <li><strong>Wallet:</strong> <%= us.crypto.wallet %></li>
+          <li><strong>Network:</strong> <%= us.crypto.network %></li>
+        </ul>
+      </div>
+
+      <form action="/" method="get" class="back-form">
+        <button type="submit" class="btn-back">← Back to Home</button>
+      </form>
+    </div>
+  <% } else { %>
+    <div class="profile-card">
+      <h2>No User Found With That Name</h2>
+    </div>
+  <% } %>
+</body>
+</html>

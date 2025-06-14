@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+
+.btn,
+.btnView {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn:hover,
+.btnView:hover {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.card {
+  background: #fafafa;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.user-info h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.user-info h3 span {
+  font-weight: 600;
+  color: #555;
+}
+
+.status {
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.eligible {
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.not-eligible {
+  color: #721c24;
+  background-color: #f8d7da;
+}
+
+.info-msg {
+  color: #555;
+  font-size: 18px;
+  margin-top: 20px;
+}

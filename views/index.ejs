@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Fetching App</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">🎲 Fetch a Random User</h2>
+
+    <form action="/user" method="post">
+      <input type="submit" value="  Fetch Random User  " class="btn" />
+    </form>
+    <form action="/search" method="post">
+      <input type="submit" value="Search User By Name" class="btn" />
+    </form>
+
+    <div class="card">
+      <% if (locals.user) { %>
+        <div class="user-info">
+          <h3><span>👤 Username:</span> <%= user.firstName %> &nbsp; <%= user.lastName %> </h3>
+          <h3><span>📞 Phone:</span> <%= user.phone %></h3>
+
+          <% if (user.age > 30) { %>
+            <p class="status eligible">✅ Eligible (Age: <%= user.age %>)</p>
+            <form action="/user-detail" method="get">
+              <button type="submit" class="btnView" name="User" value="<%= user.id %>">View Full Details</button>
+            </form>
+          <% } else { %>
+            <p class="status not-eligible">❌ Not Eligible (Age: <%= user.age %>)</p>
+          <% } %>
+        </div>
+      <% } else { %>
+        <h3 class="info-msg">Click the button to fetch a random user.</h3>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
